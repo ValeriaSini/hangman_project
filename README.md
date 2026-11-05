@@ -1,0 +1,3 @@
+Este proyecto tiene el fin de implementar un juego ejecutado mediante linea comandos.
+El mismo tiene la tipica modalidad del juego "Ahoracdo", el jugado debera adivinar una palabra selecionada de forma aleatoria por el programa, debera hacerlo mediate la seleccion de letras que pueden o no formar parte de la palabra. 
+El jugador puede intentar adivinar la plabra en cualquier momento, teniendo 6 intentos para ingresar las letras que podrian formarl, luego de los 6 intentos debera adivinar la palabra, en caso de fallar el juego finalizara, en este punto el jugador podra elegir si iniciar una nueva ronda o finalizar la partida.
