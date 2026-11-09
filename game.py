@@ -72,7 +72,7 @@ class HangmanGame():
         progreso = []
 
         for letra in self.word:
-            if letra in self.guessed_letters:
+            if letra in self.guessed_letters or not letra.isalpha():
                 progreso.append(letra)
             else:
                 progreso.append("_")

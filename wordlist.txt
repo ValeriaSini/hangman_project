@@ -18,3 +18,8 @@ universidad
 impresora
 electricidad
 refrigerador
+mother-in-law
+perro/gato
+verdadero/falso
+¡hola!
+contamos123456789

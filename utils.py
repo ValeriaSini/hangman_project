@@ -31,7 +31,7 @@ def get_random_word():
 def solicitar_letra(partida):
     continuar = True
     while continuar:
-        letter = input("Ingrese una letra: ")
+        letter = input("Ingrese una letra: ").lower()
 
         if letter.isalpha() == False or len(letter) != 1:
             print("Debe ingresar una entrada válida.")
@@ -42,7 +42,6 @@ def solicitar_letra(partida):
                 print("La letra ingresada ya se utilizó.")
             else:
                 return letter
-            continuar = False
 
 def opciones():
     opcion = menu
