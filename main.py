@@ -9,34 +9,45 @@ if __name__ == "__main__":
 
     partida = game.HangmanGame()
 
+    utils.inicio()
+    utils.reglas()
+
     while continuar:
-        opcion = utils.menu()
-        
-        match opcion:
-            case 1:
-                letter = utils.solicitar_letra(partida)
-                acierto = partida.process_guess(letter)
-                if acierto:
-                    print("La letra ingresada es correcta")
-                else:
-                    print(f"La letra ingresada es incorrecta")
 
-                partida.mostrar_intentos()
-                partida.mostrar_palabra()
-                partida.mostrar_intentos_restantes()
-                partida.mostrar_ahorcado()
+        utils.user_interface(partida)
 
-                if partida.is_won():
-                    print("¡Victoria! ¡Adivinaste la palabra!")
+        opcion = utils.menu(partida)
+
+        try:
+            match opcion:
+                case 1:
+                    letter = utils.solicitar_letra(partida)
+                    acierto = partida.process_guess(letter)
+                    if acierto:
+                        print("La letra ingresada es correcta")
+                        utils.espera(2)
+                        utils.limpiar_pantalla()
+                    else:
+                        print(f"La letra ingresada es incorrecta")
+                        utils.espera(2)
+                        utils.limpiar_pantalla()
+
+                    if partida.is_won():
+                        print("¡Victoria! ¡Adivinaste la palabra!")
+                        continuar = False
+
+                    elif partida.is_lost():
+                        print(f"Fin del juego. La palabra era: {partida.word}")
+                        continuar = False
+
+                case 2:
+                    utils.limpiar_pantalla()
+                    utils.reglas()
+                case 3:
+                    utils.fin()
                     continuar = False
+        except TypeError:
+            print("Debe ingresar un numero entre 1 y 3")
+            utils.limpiar_interfaz(partida)
 
-                elif partida.is_lost():
-                    print(f"Fin del juego. La palabra era: {partida.word}")
-                    continuar = False
-
-            case 2:
-                pass
-            case 3:
-                pass
-            case 4:
-                continuar = False
+        utils.limpiar_pantalla()
