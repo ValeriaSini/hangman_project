@@ -51,7 +51,7 @@ class HangmanGame():
             print()
 
         except IndexError:
-            print("La lista proporcionada se encuentra vacia")
+            print("La lista proporcionada se encuentra vacía")
 
     def process_guess(self, letter):
         if letter in self.word:
@@ -62,6 +62,27 @@ class HangmanGame():
             self.incorrect_letters.append(letter)
             print("La letra ingresada es incorrecta")
             return False
+
+    def mostrar_intentos(self):
+        letras_ingresadas = (
+            self.guessed_letters + self.incorrect_letters
+        )
+        print(f"Letras ingresadas: {', '.join(letras_ingresadas)}")
+
+    def mostrar_palabra(self):
+        progreso = []
+
+        for letra in self.word:
+            if letra in self.guessed_letters:
+                progreso.append(letra)
+            else:
+                progreso.append("_")
+
+        print(f"Palabra: {' '.join(progreso)}")
+
+    def mostrar_intentos_restantes(self):
+        intentos_restantes = self.max_errors - self.errors
+        print(f"Intentos restantes: {intentos_restantes}")
 
 if __name__ == "__main__":
     prueba = HangmanGame()

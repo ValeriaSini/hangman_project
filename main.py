@@ -19,7 +19,12 @@ if __name__ == "__main__":
                 if acierto:
                     print("La letra ingresada es correcta")
                 else:
-                    print(f"La letra ingresada es incorrecta, intentos restantes: {0}")
+                    print(f"La letra ingresada es incorrecta")
+
+                partida.mostrar_intentos()
+                partida.mostrar_palabra()
+                partida.mostrar_intentos_restantes()
+
             case 2:
                 pass
             case 3:

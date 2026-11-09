@@ -7,9 +7,9 @@ import os
 
 def menu():
     return int(input("""
-    Ingrese la opcion deseada:
-    1= ingresar letra
-    2- ver cantidad de intentos restanmtes
+    Ingrese la opción deseada:
+    1- ingresar letra
+    2- ver cantidad de intentos restantes
     3- ver cantidad de errores
     4- salir
     """))
@@ -20,7 +20,7 @@ def get_random_word():
             palabras = file.readlines()
 
         if len(palabras) < 1:
-            raise ValueError("El archivo seleccionado se encuentra vacio")
+            raise ValueError("El archivo seleccionado se encuentra vacío")
         else:
             palabra = random.choice(palabras)
             return palabra
@@ -35,12 +35,12 @@ def solicitar_letra(partida):
         letter = input("Ingrese una letra: ")
 
         if letter.isalpha() == False or len(letter) != 1:
-            print("Debe ingresar una entrada valida.")
+            print("Debe ingresar una entrada válida.")
             time.sleep(1.5)
             os.system("clear")
         else:
             if letter in partida.guessed_letters or letter in partida.incorrect_letters:
-                print("La letra ingresada ya se utilizo.")
+                print("La letra ingresada ya se utilizó.")
             else:
                 return letter
             continuar = False
