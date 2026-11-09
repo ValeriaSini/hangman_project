@@ -36,7 +36,7 @@ def fin():
 | |    _| |_| |\  |
 \_|    \___/\_| \_/
     """)
-    espera(2)
+    espera(3)
 
 def menu(partida):
     while True:
@@ -47,7 +47,7 @@ def menu(partida):
 3- salir
 """))
 
-            if  1 <= opcion <= 4:
+            if  1 <= opcion <= 3:
                 return opcion
 
             print("Debe ingresar un valor entre 1 y 3")

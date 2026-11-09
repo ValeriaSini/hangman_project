@@ -35,10 +35,12 @@ if __name__ == "__main__":
                     if partida.is_won():
                         print("¡Victoria! ¡Adivinaste la palabra!")
                         continuar = False
+                        utils.fin()
 
                     elif partida.is_lost():
                         print(f"Fin del juego. La palabra era: {partida.word}")
                         continuar = False
+                        utils.fin()
 
                 case 2:
                     utils.limpiar_pantalla()

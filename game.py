@@ -145,8 +145,4 @@ class HangmanGame():
 
     def is_lost(self):
         return self.errors >= self.max_errors
-
-if __name__ == "__main__":
-    prueba = HangmanGame()
-
-    prueba.display_progress(prueba.word)
+        
