@@ -25,6 +25,14 @@ if __name__ == "__main__":
                 partida.mostrar_palabra()
                 partida.mostrar_intentos_restantes()
 
+                if partida.is_won():
+                    print("¡Victoria! ¡Adivinaste la palabra!")
+                    continuar = False
+
+                elif partida.is_lost():
+                    print(f"Fin del juego. La palabra era: {partida.word}")
+                    continuar = False
+
             case 2:
                 pass
             case 3:

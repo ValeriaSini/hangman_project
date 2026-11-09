@@ -30,7 +30,6 @@ def get_random_word():
 
 def solicitar_letra(partida):
     continuar = True
-    print(partida.word)
     while continuar:
         letter = input("Ingrese una letra: ")
 

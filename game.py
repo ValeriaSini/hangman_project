@@ -60,7 +60,6 @@ class HangmanGame():
         else:
             self.errors += 1
             self.incorrect_letters.append(letter)
-            print("La letra ingresada es incorrecta")
             return False
 
     def mostrar_intentos(self):
@@ -83,6 +82,15 @@ class HangmanGame():
     def mostrar_intentos_restantes(self):
         intentos_restantes = self.max_errors - self.errors
         print(f"Intentos restantes: {intentos_restantes}")
+
+    def is_won(self):
+        for letra in self.word:
+            if letra.isalpha() and letra not in self.guessed_letters:
+                return False
+        return True
+
+    def is_lost(self):
+        return self.errors >= self.max_errors
 
 if __name__ == "__main__":
     prueba = HangmanGame()
