@@ -10,6 +10,60 @@ class HangmanGame():
         self.incorrect_letters = []
         self.max_errors = 6
         self.errors = 0
+    
+    def mostrar_ahorcado(self):
+        dibujos = [
+            """
+
+
+
+
+
+        __________
+            """,
+            """
+              O
+
+
+
+        __________
+            """,
+            """
+              O
+              |
+
+
+        __________
+            """,
+            """
+              O
+             /|
+
+
+        __________
+            """,
+            """
+              O
+             /|\\
+
+
+        __________
+            """,
+            """
+              O
+             /|\\
+             /
+        __________
+            """,
+            """
+              O
+             /|\\
+             / \\
+        __________
+            """
+        ]
+
+        print(dibujos[self.errors])
 
     @property
     def word(self):

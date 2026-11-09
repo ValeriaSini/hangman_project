@@ -24,6 +24,7 @@ if __name__ == "__main__":
                 partida.mostrar_intentos()
                 partida.mostrar_palabra()
                 partida.mostrar_intentos_restantes()
+                partida.mostrar_ahorcado()
 
                 if partida.is_won():
                     print("¡Victoria! ¡Adivinaste la palabra!")
