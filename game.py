@@ -108,8 +108,10 @@ class HangmanGame():
             print("La lista proporcionada se encuentra vacía")
 
     def process_guess(self, letter):
-        if letter in self.word:
-            self.guessed_letters.append(letter)
+        if letter.lower() in self.word.lower():
+            for char in self.word:
+                if char.lower() == letter.lower():
+                    self.guessed_letters.append(char)
             return True
         else:
             self.errors += 1

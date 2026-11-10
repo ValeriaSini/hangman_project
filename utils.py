@@ -42,8 +42,8 @@ def menu(partida):
     while True:
         try:
             opcion = int(input("""Ingrese la opción deseada:
-1- ingresar letra
-2- ver Reglas
+1- Ingresar letra
+2- Reglas
 3- salir
 """))
 
@@ -60,7 +60,7 @@ def menu(partida):
             limpiar_interfaz(partida)
 
 def reglas():
-    print("""Reglas:
+    print("""Reglas Del Juego:
     - El jugador debe adivinar la palabra oculta letra por letra.
     - Solo se aceptan letras como entrada válida.
     - Cada intento incorrecto aumenta el contador de errores.
@@ -79,14 +79,14 @@ def get_random_word():
             palabra = random.choice(palabras)
             return palabra
         
-    except FileNotFoundError():
+    except FileNotFoundError:
         print("El archivo indicado no existe.")
 
 def solicitar_letra(partida):
     continuar = True
     while continuar:
         limpiar_interfaz(partida)
-        letter = input("Ingrese una letra: ").lower()
+        letter = input("Ingrese una letra: ")
 
         if letter.isalpha() == False or len(letter) != 1:
             print("Debe ingresar una entrada válida.")
@@ -98,21 +98,19 @@ def solicitar_letra(partida):
             else:
                 return letter
 
-def acciones(opcion, partida):
-    pass
-
-
 def user_interface(partida):
     partida.mostrar_intentos()
     partida.mostrar_palabra()
     partida.mostrar_intentos_restantes()
     partida.mostrar_ahorcado()
-
-    #return menu(partida)
+    print("="*40)
 
 def limpiar_interfaz(partida):
     limpiar_pantalla()
     user_interface(partida)
 
-if __name__ == "__main__":
+def obtener_partida():
+    pass
+
+def guardar_partida():
     pass
